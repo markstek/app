@@ -1,0 +1,53 @@
+sudo apt-get update
+sudo apt-get upgrade -y
+
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update
+sudo apt-get install docker-ce -y
+
+sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep -Po '"tag_name": "\K.*\d')/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/ 
+bin/docker-compose
+docker-compose --version
+
+sudo usermod -aG docker $(whoami)
+
+
+In same folder of app that has manage.py and docker-compose.yml open terminal and write
+
+docker-compose build
+
+docker-compose up -d
+
+type the step by step please
+
+write and do it
+
+1 - sudo apt-get update
+
+2 - sudo apt-get upgrade -y
+
+3 - sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
+
+4 - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+5 - sudo apt-get update
+
+6 - sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep -Po '"tag_name": "\K.*\d')/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+7 - sudo chmod +x /usr/local/bin/docker-compose
+
+8 - docker-compose --version
+
+9 - sudo usermod -aG docker $(whoami)
+
+10 - join app folder and run last two command 
+
+ 1 - cd app
+
+ 2 - docker-compose build
+ 
+ 3 - docker-compose up -d
